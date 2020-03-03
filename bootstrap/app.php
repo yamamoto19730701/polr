@@ -1,8 +1,12 @@
 <?php
 
 require_once __DIR__.'/../vendor/autoload.php';
-
-Dotenv::load(__DIR__.'/../');
+//Dotenv::load(__DIR__.'/../');
+try {
+    (new Dotenv\Dotenv(__DIR__.'/../'))->load();
+} catch (Dotenv\Exception\InvalidPathException $e) {
+    //
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +23,13 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
+
 $app->withFacades();
 $app->withEloquent();
 
 $app->configure('geoip');
+$app->configure('session');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +62,16 @@ $app->singleton(
 | route or middleware that'll be assigned to some specific routes.
 |
 */
+//$app->bind(Illuminate\Support\Manager::class,function ($app) {
+//    return new Illuminate\Support\Manager($app);
+//});
 
+$app->extend("session",function($obj)use($app){
+    $app->configure("session");
+    return $obj;
+});
+$app->alias("session",\Illuminate\Session\SessionManager::class);
+$app->register(\Illuminate\Session\SessionServiceProvider::class);
 $app->middleware([
     Illuminate\Cookie\Middleware\EncryptCookies::class,
     // Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
@@ -63,9 +79,13 @@ $app->middleware([
     Illuminate\View\Middleware\ShareErrorsFromSession::class,
     App\Http\Middleware\VerifyCsrfToken::class,
 ]);
+class_alias('Illuminate\Support\Facades\Session', 'Session');
+class_alias('Illuminate\Support\Facades\Hash', 'Hash');
+class_alias('Illuminate\Support\Facades\Request', 'Request');
 
 $app->routeMiddleware([
     'api' => App\Http\Middleware\ApiMiddleware::class,
+    'csrf' => 'App\Http\Middleware\VerifyCsrfToken'
 ]);
 
 /*
@@ -83,6 +103,7 @@ $app->register(App\Providers\AppServiceProvider::class);
 $app->register(\Yajra\Datatables\DatatablesServiceProvider::class);
 $app->register(\Torann\GeoIP\GeoIPServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+$app->register(\Torann\GeoIP\GeoIPServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

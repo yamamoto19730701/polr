@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Carbon\Carbon;
-use Illuminate\Foundation\Application;
+use Laravel\Lumen\Application;
 use Symfony\Component\HttpFoundation\Cookie;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Session\TokenMismatchException;

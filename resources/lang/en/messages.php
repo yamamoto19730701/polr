@@ -7,5 +7,5 @@
  */
 
 return [
-    'Register' => 'ユーザ登録'
+    'Register' => 'Register'
 ];
