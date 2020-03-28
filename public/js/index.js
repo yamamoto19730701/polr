@@ -54,10 +54,10 @@ $(function() {
     function changeTips(tcase) {
         switch (tcase) {
             case 1:
-                setTip('Create an account to keep track of your links');
+                setTip('URLを短縮して分析するためにアカウントを作成してください。');
                 break;
             case 2:
-                setTip('Did you know you can change the URL ending by clicking on "Link Options"?');
+                setTip('「リンクオプション」で短縮URLの末尾を指定できます。');
                 i = 1;
                 break;
         }

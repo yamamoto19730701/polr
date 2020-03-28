@@ -1,3 +1,6 @@
+
+<link rel='stylesheet' href='css/navbar.css' />
+
 <div class="container-fluid">
     <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -9,7 +12,7 @@
 
         <!-- Output sign in/sign out buttons appropriately -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ route('index') }}">{{env('APP_NAME')}}</a>
+            <a class="navbar-brand" href="{{ route('index') }}"></a>
         </div>
 
         <ul id="navbar" class="nav navbar-collapse collapse navbar-nav" id="nbc">

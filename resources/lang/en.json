@@ -1,4 +1,5 @@
 {
+  "bak.jp URL shortener": "bak.jp URL shortener",
   "About": "About",
   "Sign In": "Sign In",
   "Sign Up": "Sign Up",
@@ -22,5 +23,19 @@
   "Links": "Links",
   "Change Password": "Change Password",
   "Old Password": "Old Password",
-  "New Password": "New Password"
+  "New Password": "New Password",
+  "Create an account to keep track of your links": "Create an account to keep track of your links",
+  "Did you know you can change the URL ending by clicking on Link Options?":"Did you know you can change the URL ending by clicking on Link Options?",
+  "Shorten":"Shorten",
+  "Link Options":"Link Options",
+  "Loading": "Loading",
+  "Already in use": "Already in use",
+  "Available": "Available",
+  "Invalid Custom URL Ending": "Invalid Custom URL Ending",
+  "An error occured. Try again": "An error occured. Try again",
+  "Customize link": "Customize link",
+  "Check Availability": "Check Availability",
+  "Loading Tips...": "Loading Tips...",
+  "You must be logged in to shorten links.": "You must be logged in to shorten links.",
+  "Sorry, but this link has been disabled by an administrator.": "Sorry, but this link has been disabled by an administrator."
 }

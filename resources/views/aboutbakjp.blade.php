@@ -5,13 +5,13 @@
 @endsection
 
 @section('content')
-    <div class="logotxt">
-        bak.jp URL shortener service
+    <div>
+        <img class='bakjplogo-img' src='/img/bakjplogo.png' />
     </div>
 
     <div class='about-contents'>
-        <p>{{env('APP_NAME')}} is serviced by <a href="https://tailshape.jp/" target="_new">Tailshape Inc.</a></p>
-        <p>{{env('APP_NAME')}} is powered by <a href="{{ route('about') }}">Polr 2</a>, an open source, minimalist link shortening platform.</p>
+        {{env('APP_NAME')}} is serviced by <a href="https://tailshape.jp/" target="_new">Tailshape Inc.</a><br>
+        {{env('APP_NAME')}} is powered by <a href="{{ route('about') }}">Polr 2</a>, an open source, minimalist link shortening platform.
     </div>
 @endsection
 

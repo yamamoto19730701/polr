@@ -1,4 +1,5 @@
 {
+  "bak.jp URL shortener": "URL短縮サービスbak.jp",
   "About": "サービスについて",
   "Sign In": "ログイン",
   "Sign Up": "ユーザ登録",
@@ -11,7 +12,7 @@
   "Email": "Eメール",
   "Regist": "登録する",
   "Already have an account?": "既にアカウントをお持ちの方",
-  "The username you will use to login.": "ログインに使用するユーザ名",
+  "The username you will use to login.": "ログインに使用するユーザ名(半角英数文字のみ)",
   "The secure password you will use to login.": "ログインに使用するパスワード",
   "The email you will use to verify your account or to recover your account.": "本人認証及びパスワードリマインダのためのEメールアドレス",
   "Login": "ログイン",
@@ -22,5 +23,20 @@
   "Links": "短縮したURL",
   "Change Password": "パスワード変更",
   "Old Password": "古いパスワード",
-  "New Password": "新しいパスワード"
+  "New Password": "新しいパスワード",
+  "Create an account to keep track of your links": "URLを短縮して分析するためにアカウントを作成してください。",
+  "Did you know you can change the URL ending by clicking on Link Options?":"「リンクオプション」で短縮URLの末尾を指定できます。",
+  "Shorten":"URL短縮",
+  "Link Options":"リンクオプション",
+  "Loading": "読込中",
+  "Already in use": "既に使われています。",
+  "Available": "使用可能です。",
+  "Invalid Custom URL Ending": "不正なURLです。",
+  "An error occured. Try again": "エラーが発生しました。もう一度実行してください。",
+  "Customize link": "オリジナルURL",
+  "Check Availability": "使用可能かチェックする",
+  "Loading Tips...": "Tipsの読込中...",
+  "You must be logged in to shorten links.": "URL短縮するには、サービスにログインしてください。",
+  "Sorry, but this link has been disabled by an administrator.": "このリンクは、管理者によって無効にされています。"
+
 }
