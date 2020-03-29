@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Api;
+use App\Helpers\ClickHelper;
 use Illuminate\Http\Request;
 
 use App\Factories\LinkFactory;
@@ -37,7 +38,7 @@ class ApiLinkController extends ApiController {
             $request->input('url'),
             ($request->input('is_secret') == 'true' ? true : false),
             $request->input('custom_ending'),
-            $request->ip(),
+            ClickHelper::getIp(),
             $user->username,
             $response_type
         );
@@ -50,7 +51,7 @@ class ApiLinkController extends ApiController {
         $request_data = $request->input('data');
 
         $user = $request->user;
-        $link_ip = $request->ip();
+        $link_ip = ClickHelper::getIp();
         $username = $user->username;
 
         if ($response_type != 'json') {

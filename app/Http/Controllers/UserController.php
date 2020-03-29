@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Helpers\ClickHelper;
 use Mail;
 use Hash;
 use App\Models\User;
@@ -63,7 +64,7 @@ class UserController extends Controller {
             $gRecaptchaResponse = $request->input('g-recaptcha-response');
 
             $recaptcha = new \ReCaptcha\ReCaptcha(env('POLR_RECAPTCHA_SECRET_KEY'));
-            $recaptcha_resp = $recaptcha->verify($gRecaptchaResponse, $request->ip());
+            $recaptcha_resp = $recaptcha->verify($gRecaptchaResponse, ClickHelper::getIp());
 
             if (!$recaptcha_resp->isSuccess()) {
                 return redirect(route('signup'))->with('error', 'You must complete the reCAPTCHA to register.');
@@ -90,7 +91,7 @@ class UserController extends Controller {
             }
         }
 
-        $ip = $request->ip();
+        $ip = ClickHelper::getIp();
 
         $user_exists = UserHelper::userExists($username);
         $email_exists = UserHelper::emailExists($email);
@@ -143,7 +144,7 @@ class UserController extends Controller {
         }
 
         $email = $request->input('email');
-        $ip = $request->ip();
+        $ip = ClickHelper::getIp();
         $user = UserHelper::getUserByEmail($email);
 
         if (!$user) {

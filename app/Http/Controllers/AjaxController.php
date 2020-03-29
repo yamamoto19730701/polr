@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Helpers\ClickHelper;
 use Illuminate\Http\Request;
 use App\Helpers\LinkHelper;
 use App\Helpers\CryptoHelper;
@@ -161,7 +162,7 @@ class AjaxController extends Controller {
     public function addNewUser(Request $request) {
         self::ensureAdmin();
 
-        $ip = $request->ip();
+        $ip = ClickHelper::getIp();
         $username = $request->input('username');
         $user_password = $request->input('user_password');
         $user_email = $request->input('user_email');

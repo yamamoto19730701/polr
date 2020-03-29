@@ -6,7 +6,6 @@ use Illuminate\Http\Redirect;
 use App\Models\Link;
 use App\Factories\LinkFactory;
 use App\Helpers\CryptoHelper;
-use App\Helpers\LinkHelper;
 use App\Helpers\ClickHelper;
 
 class LinkController extends Controller {
@@ -35,7 +34,8 @@ class LinkController extends Controller {
         $custom_ending = $request->input('custom-ending');
         $is_secret = ($request->input('options') == "s" ? true : false);
         $creator = session('username');
-        $link_ip = $request->ip();
+
+        $link_ip =ClickHelper::getIp();
 
         try {
             $short_url = LinkFactory::createLink($long_url, $is_secret, $custom_ending, $link_ip, $creator);
@@ -101,5 +101,4 @@ class LinkController extends Controller {
         // Redirect to final destination
         return redirect()->to($long_url, 301);
     }
-
 }
