@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Helpers\ClickHelper;
 use Closure;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -17,7 +18,7 @@ class ApiMiddleware {
             // no API key provided; check whether anonymous API is enabled
 
             if (env('SETTING_ANON_API')) {
-                $username = 'ANONIP-' . $request->ip();
+                $username = 'ANONIP-' . ClickHelper::getIp();
             }
             else {
                 throw new ApiException('AUTH_ERROR', 'Authentication token required.', 401, $response_type);

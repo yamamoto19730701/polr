@@ -23,7 +23,7 @@ class ClickHelper {
          * @return boolean
          */
 
-        $ip = $request->ip();
+        $ip = Self::getIp();
         $referer = $request->server('HTTP_REFERER');
 
         $click = new Click;
@@ -37,4 +37,15 @@ class ClickHelper {
 
         return true;
     }
+    static public function getIp(){
+        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            $ip_array = explode(",",$ip);
+            $ip = $ip_array[0];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
+    }
+
 }
