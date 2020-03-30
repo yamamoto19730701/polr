@@ -17,7 +17,7 @@ class Language
     public function handle($request, Closure $next)
     {
         $lang = locale_accept_from_http($request->server->get('HTTP_ACCEPT_LANGUAGE'));
-        App::setLocale($lang);
+        App::setLocale(substr($lang,0,2));
         return $next($request);
     }
 }
