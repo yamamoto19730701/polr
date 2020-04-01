@@ -2,11 +2,18 @@
 namespace App\Helpers;
 use App\Models\Click;
 use App\Models\Link;
+use danielme85\Geoip2\Facade\Reader;
 use Illuminate\Http\Request;
 
 class ClickHelper {
     static private function getCountry($ip) {
-        $country_iso = geoip()->getLocation($ip)->iso_code;
+        try{
+            $reader=Reader::connect();
+            $result=$reader->city($ip);
+            $country_iso = $result->country->isoCode;
+        }catch(\Exception $ex){
+            $country_iso = '';
+        }
         return $country_iso;
     }
 
