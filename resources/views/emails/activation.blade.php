@@ -1,7 +1,6 @@
-<h3>Hello {{$username}}!</h3>
+<h3>{{__("Hello username",['username'=>$username])}}</h3>
 
-<p>Thanks for registering at {{env('APP_NAME')}}. To use your account,
-you will need to activate it by clicking the following link:</p>
+<p>{{__("Thanks for registering at appname. To use your account, you will need to activate it by clicking the following link",['appname'=>env('APP_NAME')])}}</p>
 
 <br />
 
@@ -11,11 +10,10 @@ you will need to activate it by clicking the following link:</p>
 
 <br />
 
-<p>Thanks,</p>
-<p>The {{env('APP_NAME')}} team.</p>
+<p>{{__("Thanks,")}}</p>
+<p>{{__("The appname team.",['appname'=>env('APP_NAME')])}}</p>
 
 --
 <br />
-You received this email because someone with the IP {{$ip}} signed up
-for an account at {{env('APP_PROTOCOL')}}{{env('APP_ADDRESS')}}. If this was not you,
-you may ignore this email.
+{{__("You received this email because someone with the IP ip signed up for an account at APP_PROTOCOL APP_ADDRESS. If this was not you,you may ignore this email.",['ip'=>$ip,'appprotocol'=>env('APP_PROTOCOL'),'appaddress'=>env('APP_ADDRESS')])}}
+

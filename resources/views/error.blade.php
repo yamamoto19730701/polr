@@ -1,4 +1,4 @@
-@extends('layouts.errors')
+@extends('layouts.errorminimal')
 
 @section('content')
 <h2>Error</h2>
