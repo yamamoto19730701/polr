@@ -37,6 +37,10 @@
   "Check Availability": "使用可能かチェックする",
   "Loading Tips...": "Tipsの読込中...",
   "You must be logged in to shorten links.": "URL短縮するには、サービスにログインしてください。",
-  "Sorry, but this link has been disabled by an administrator.": "このリンクは、管理者によって無効にされています。"
-
+  "Sorry, but this link has been disabled by an administrator.": "このリンクは、管理者によって無効にされています。",
+  "Hello username":"こんにちは :usernameさん!",
+  "Thanks for registering at appname. To use your account, you will need to activate it by clicking the following link": ":appnameサービスにご登録いただきありがとうございます。次のURLをクリックして登録を完了してください。",
+  "Thanks,":"ありがとうございました。",
+  "The appname team.": ":appname チームより",
+  "You received this email because someone with the IP ip signed up for an account at APP_PROTOCOL APP_ADDRESS. If this was not you,you may ignore this email.": ":appprotocol:appaddressでIPアドレス:ipからアカウント登録が依頼されましたのでこのEメールが送信されました。もしあなたが依頼したものでなければこのメールは無視していただいて結構です。"
 }
